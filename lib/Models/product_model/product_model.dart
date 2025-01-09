@@ -38,7 +38,7 @@ class ProductModel extends Equatable {
 				'description': description,
 				'category': category,
 				'image': image,
-				'rating': rating?.toJson(),
+				'rating': rating.toJson(),
 			};
 
 	@override
