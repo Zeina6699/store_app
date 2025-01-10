@@ -1,10 +1,13 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:store_app/Models/product_model/product_model.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({
+  CustomCard({
     super.key,
+   required this.product
   });
+  ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -17,23 +20,30 @@ class CustomCard extends StatelessWidget {
         ]),
         width: 220,
         height: 150,
-        child:const Card(
+        child: Card(
          elevation:15,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 12),
+            padding:const EdgeInsets.symmetric(horizontal: 16,vertical: 12),
             child: Column( 
               mainAxisAlignment: MainAxisAlignment.end,
       
               crossAxisAlignment:CrossAxisAlignment.start,
               children: [
 
-              Text('HandBag LV',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 19)),
-              SizedBox(height: 3),
+              Text(
+                maxLines: 2,
+                product.title
+              //  'HandBag LV'
+                ,style:const TextStyle(color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 19)),
+             const SizedBox(height: 3),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-              Text(r'$225',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-              Icon(FontAwesomeIcons.solidHeart,color: Colors.red,)
+              Text(
+            r"$" "${product.price.toString()}",
+               // r'$225',
+                style:const TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
+            const  Icon(FontAwesomeIcons.solidHeart,color: Colors.red,)
             
                 ],
               )
@@ -48,7 +58,9 @@ class CustomCard extends StatelessWidget {
           bottom:90,
           child: Image.network(
             height: 100,
-            'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'),
+            width: 100,
+            product.image)
+           // 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg'),
         )
     ]);
   }
