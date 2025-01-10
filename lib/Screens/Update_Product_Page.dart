@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/Screens/Widgets/Update_Product_Page_Body.dart';
+import 'package:store_app/Screens/Widgets/Custom_Button.dart';
 import 'package:store_app/Screens/Widgets/Custom_Form_Text_Field.dart';
 
 class UpdateProductPage extends StatelessWidget {
@@ -10,27 +12,8 @@ class UpdateProductPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text('Update Product'),
+        title:const Text('Update Product'),
         elevation: 0,
         centerTitle:true,
       ),
-      body:Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 30),
-        child: Column(
-          children: [
-            CustomFormTextField(hintText: "Product Name"),
-            const SizedBox(height: 15),
-            CustomFormTextField(hintText: "Description"),
-            const SizedBox(height: 15),
-            CustomFormTextField(hintText: "Price"),
-            const SizedBox(height: 15),
-            CustomFormTextField(hintText: "Image"),
-
-
-          ],
-        ),
-      ) ,
-
-    );
-  }
-}
+      body:const UpdateProductPageBody());}}

@@ -9,7 +9,7 @@ class CustomFormTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      obscureText: obscureText!,
+      obscureText: obscureText,
       validator: (data){
         if(data!.isEmpty){return 'Field is required';}},
         onChanged:onChanged,
@@ -21,7 +21,7 @@ class CustomFormTextField extends StatelessWidget {
 
 
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
+            borderSide:const BorderSide(
               color: Colors.black
             ),
             borderRadius: BorderRadius.circular(10)
